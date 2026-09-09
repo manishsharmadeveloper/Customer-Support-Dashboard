@@ -17,17 +17,11 @@ const TicketList = () => {
   // =========================================================
   // Zustand State
   // =========================================================
-  const tickets = useTicketStore(
-    (state) => state.tickets,
-  );
+  const tickets = useTicketStore((state) => state.tickets);
 
-  const loading = useTicketStore(
-    (state) => state.loading,
-  );
+  const loading = useTicketStore((state) => state.loading);
 
-  const error = useTicketStore(
-    (state) => state.error,
-  );
+  const error = useTicketStore((state) => state.error);
 
   // =========================================================
   // Zustand Actions
@@ -36,9 +30,7 @@ const TicketList = () => {
     (state) => state.updateTicketStatus,
   );
 
-  const fetchTickets = useTicketStore(
-    (state) => state.fetchTickets,
-  );
+  const fetchTickets = useTicketStore((state) => state.fetchTickets);
 
   // =========================================================
   // Filter State
@@ -50,32 +42,22 @@ const TicketList = () => {
   // =========================================================
   // Make Sure Tickets Is Always An Array
   // =========================================================
-  const ticketList = Array.isArray(tickets)
-    ? tickets
-    : [];
+  const ticketList = Array.isArray(tickets) ? tickets : [];
 
   // =========================================================
   // Filter Tickets
   // =========================================================
   const filteredTickets = useMemo(() => {
-    const searchValue = search
-      .trim()
-      .toLowerCase();
+    const searchValue = search.trim().toLowerCase();
 
     return ticketList.filter((ticket) => {
-      const customerName =
-        ticket?.customer?.name
-          ?.toLowerCase() || "";
+      const customerName = ticket?.customer?.name?.toLowerCase() || "";
 
-      const customerEmail =
-        ticket?.customer?.email
-          ?.toLowerCase() || "";
+      const customerEmail = ticket?.customer?.email?.toLowerCase() || "";
 
-      const subject =
-        ticket?.subject?.toLowerCase() || "";
+      const subject = ticket?.subject?.toLowerCase() || "";
 
-      const ticketId =
-        String(ticket?.id || "").toLowerCase();
+      const ticketId = String(ticket?.id || "").toLowerCase();
 
       // Search
       const matchesSearch =
@@ -86,27 +68,15 @@ const TicketList = () => {
         ticketId.includes(searchValue);
 
       // Status
-      const matchesStatus =
-        status === "All" ||
-        ticket?.status === status;
+      const matchesStatus = status === "All" || ticket?.status === status;
 
       // Priority
       const matchesPriority =
-        priority === "All" ||
-        ticket?.priority === priority;
+        priority === "All" || ticket?.priority === priority;
 
-      return (
-        matchesSearch &&
-        matchesStatus &&
-        matchesPriority
-      );
+      return matchesSearch && matchesStatus && matchesPriority;
     });
-  }, [
-    ticketList,
-    search,
-    status,
-    priority,
-  ]);
+  }, [ticketList, search, status, priority]);
 
   // =========================================================
   // Clear Filters
@@ -120,20 +90,11 @@ const TicketList = () => {
   // =========================================================
   // Change Ticket Status
   // =========================================================
-  const handleStatusChange = async (
-    ticketId,
-    newStatus,
-  ) => {
+  const handleStatusChange = async (ticketId, newStatus) => {
     try {
-      await updateTicketStatus(
-        ticketId,
-        newStatus,
-      );
+      await updateTicketStatus(ticketId, newStatus);
     } catch (error) {
-      console.error(
-        "Failed to update ticket status:",
-        error,
-      );
+      console.error("Failed to update ticket status:", error);
     }
   };
 
@@ -184,7 +145,6 @@ const TicketList = () => {
           <div className="mt-4 rounded-2xl border border-gray-200 bg-white p-10 shadow-sm">
             <div className="flex items-center justify-center gap-3 text-sm text-gray-500">
               <RefreshCw className="h-5 w-5 animate-spin" />
-
               Loading tickets...
             </div>
           </div>
@@ -212,9 +172,7 @@ const TicketList = () => {
             </h2>
 
             {/* Error */}
-            <p className="mt-2 text-sm leading-6 text-gray-500">
-              {error}
-            </p>
+            <p className="mt-2 text-sm leading-6 text-gray-500">{error}</p>
 
             {/* Retry */}
             <button
@@ -224,16 +182,10 @@ const TicketList = () => {
               className="mt-5 inline-flex items-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 disabled:cursor-not-allowed disabled:opacity-60"
             >
               <RefreshCw
-                className={`h-4 w-4 ${
-                  loading
-                    ? "animate-spin"
-                    : ""
-                }`}
+                className={`h-4 w-4 ${loading ? "animate-spin" : ""}`}
               />
 
-              {loading
-                ? "Retrying..."
-                : "Try Again"}
+              {loading ? "Retrying..." : "Try Again"}
             </button>
           </div>
         </div>
@@ -272,7 +224,6 @@ const TicketList = () => {
             className="inline-flex items-center justify-center gap-2 rounded-xl bg-indigo-600 px-4 py-2.5 text-sm font-semibold text-white shadow-sm transition hover:bg-indigo-700 hover:shadow-md focus:outline-none focus:ring-2 focus:ring-indigo-200"
           >
             <Plus className="h-4 w-4" />
-
             Create Ticket
           </button>
         </div>
@@ -298,14 +249,10 @@ const TicketList = () => {
             <span className="font-semibold text-gray-900">
               {filteredTickets.length}
             </span>{" "}
-            {filteredTickets.length === 1
-              ? "ticket"
-              : "tickets"}
+            {filteredTickets.length === 1 ? "ticket" : "tickets"}
           </p>
 
-          {(search.trim() !== "" ||
-            status !== "All" ||
-            priority !== "All") && (
+          {(search.trim() !== "" || status !== "All" || priority !== "All") && (
             <button
               type="button"
               onClick={clearFilters}

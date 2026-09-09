@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  Search,
-  SlidersHorizontal,
-  X,
-} from "lucide-react";
+import { Search, SlidersHorizontal, X } from "lucide-react";
 
 const TicketFilters = ({
   search = "",
@@ -19,13 +15,10 @@ const TicketFilters = ({
     setPriority("All");
   };
 
-  const searchValue =
-    typeof search === "string" ? search : "";
+  const searchValue = typeof search === "string" ? search : "";
 
   const hasFilters =
-    searchValue.trim() !== "" ||
-    status !== "All" ||
-    priority !== "All";
+    searchValue.trim() !== "" || status !== "All" || priority !== "All";
 
   return (
     <div className="rounded-2xl border border-gray-200 bg-white p-4 shadow-sm">
@@ -69,21 +62,13 @@ const TicketFilters = ({
             aria-label="Filter tickets by status"
             className="h-11 w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-3 text-sm text-gray-700 outline-none transition hover:border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 sm:w-auto"
           >
-            <option value="All">
-              All Status
-            </option>
+            <option value="All">All Status</option>
 
-            <option value="Open">
-              Open
-            </option>
+            <option value="Open">Open</option>
 
-            <option value="In Progress">
-              In Progress
-            </option>
+            <option value="In Progress">In Progress</option>
 
-            <option value="Resolved">
-              Resolved
-            </option>
+            <option value="Resolved">Resolved</option>
           </select>
         </div>
 
@@ -98,21 +83,13 @@ const TicketFilters = ({
           aria-label="Filter tickets by priority"
           className="h-11 w-full cursor-pointer rounded-xl border border-gray-200 bg-gray-50 px-3 text-sm text-gray-700 outline-none transition hover:border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-100 sm:w-auto"
         >
-          <option value="All">
-            All Priority
-          </option>
+          <option value="All">All Priority</option>
 
-          <option value="Low">
-            Low
-          </option>
+          <option value="Low">Low</option>
 
-          <option value="Medium">
-            Medium
-          </option>
+          <option value="Medium">Medium</option>
 
-          <option value="High">
-            High
-          </option>
+          <option value="High">High</option>
         </select>
 
         {/* =====================================================
@@ -125,11 +102,7 @@ const TicketFilters = ({
             aria-label="Clear all ticket filters"
             className="inline-flex h-11 w-full items-center justify-center gap-2 rounded-xl border border-gray-200 bg-white px-4 text-sm font-medium text-gray-600 transition hover:border-gray-300 hover:bg-gray-50 hover:text-gray-900 focus:outline-none focus:ring-2 focus:ring-indigo-100 sm:w-auto"
           >
-            <X
-              aria-hidden="true"
-              className="h-4 w-4"
-            />
-
+            <X aria-hidden="true" className="h-4 w-4" />
             Clear
           </button>
         )}

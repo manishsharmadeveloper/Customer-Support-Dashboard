@@ -1,9 +1,5 @@
 import React from "react";
-import {
-  ArrowRight,
-  Mail,
-  Ticket,
-} from "lucide-react";
+import { ArrowRight, Mail, Ticket } from "lucide-react";
 import { useNavigate } from "react-router-dom";
 
 import StatusBadge from "../tickets/StatusBadge";
@@ -42,18 +38,12 @@ const getInitials = (name = "") => {
 };
 
 const RecentTickets = () => {
-  const tickets = useTicketStore(
-    (state) => state.tickets,
-  );
+  const tickets = useTicketStore((state) => state.tickets);
 
   const navigate = useNavigate();
 
   const recentTickets = [...tickets]
-    .sort(
-      (a, b) =>
-        new Date(b.createdAt) -
-        new Date(a.createdAt),
-    )
+    .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt))
     .slice(0, 5);
 
   const handleOpenTicket = (ticketId) => {
@@ -90,7 +80,6 @@ const RecentTickets = () => {
           className="inline-flex items-center justify-center gap-2 rounded-lg px-3 py-2 text-sm font-semibold text-indigo-600 transition hover:bg-indigo-50 focus:outline-none focus:ring-2 focus:ring-indigo-100"
         >
           View all
-
           <ArrowRight className="h-4 w-4" />
         </button>
       </div>
@@ -146,19 +135,14 @@ const RecentTickets = () => {
               <tbody className="divide-y divide-gray-100">
                 {recentTickets.map((ticket) => {
                   const customerName =
-                    ticket.customer?.name ||
-                    "Unknown Customer";
+                    ticket.customer?.name || "Unknown Customer";
 
-                  const customerEmail =
-                    ticket.customer?.email ||
-                    "No email";
+                  const customerEmail = ticket.customer?.email || "No email";
 
                   return (
                     <tr
                       key={ticket.id}
-                      onClick={() =>
-                        handleOpenTicket(ticket.id)
-                      }
+                      onClick={() => handleOpenTicket(ticket.id)}
                       className="cursor-pointer transition hover:bg-gray-50"
                     >
                       {/* Ticket */}
@@ -168,8 +152,7 @@ const RecentTickets = () => {
                         </p>
 
                         <p className="mt-1 max-w-xs truncate text-sm font-semibold text-gray-900">
-                          {ticket.subject ||
-                            "No subject"}
+                          {ticket.subject || "No subject"}
                         </p>
                       </td>
 
@@ -177,9 +160,7 @@ const RecentTickets = () => {
                       <td className="px-6 py-4">
                         <div className="flex items-center gap-3">
                           <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">
-                            {getInitials(
-                              customerName,
-                            )}
+                            {getInitials(customerName)}
                           </div>
 
                           <div className="min-w-0">
@@ -190,9 +171,7 @@ const RecentTickets = () => {
                             <div className="mt-0.5 flex items-center gap-1 text-xs text-gray-400">
                               <Mail className="h-3 w-3 shrink-0" />
 
-                              <span className="truncate">
-                                {customerEmail}
-                              </span>
+                              <span className="truncate">{customerEmail}</span>
                             </div>
                           </div>
                         </div>
@@ -200,23 +179,17 @@ const RecentTickets = () => {
 
                       {/* Priority */}
                       <td className="px-6 py-4">
-                        <PriorityBadge
-                          priority={ticket.priority}
-                        />
+                        <PriorityBadge priority={ticket.priority} />
                       </td>
 
                       {/* Status */}
                       <td className="px-6 py-4">
-                        <StatusBadge
-                          status={ticket.status}
-                        />
+                        <StatusBadge status={ticket.status} />
                       </td>
 
                       {/* Created */}
                       <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
-                        {formatDate(
-                          ticket.createdAt,
-                        )}
+                        {formatDate(ticket.createdAt)}
                       </td>
                     </tr>
                   );
@@ -230,16 +203,12 @@ const RecentTickets = () => {
           ================================================== */}
           <div className="divide-y divide-gray-100 md:hidden">
             {recentTickets.map((ticket) => {
-              const customerName =
-                ticket.customer?.name ||
-                "Unknown Customer";
+              const customerName = ticket.customer?.name || "Unknown Customer";
 
               return (
                 <div
                   key={ticket.id}
-                  onClick={() =>
-                    handleOpenTicket(ticket.id)
-                  }
+                  onClick={() => handleOpenTicket(ticket.id)}
                   className="cursor-pointer p-5 transition hover:bg-gray-50"
                 >
                   {/* Ticket Header */}
@@ -250,8 +219,7 @@ const RecentTickets = () => {
                       </p>
 
                       <h3 className="mt-1 truncate text-sm font-semibold text-gray-900">
-                        {ticket.subject ||
-                          "No subject"}
+                        {ticket.subject || "No subject"}
                       </h3>
                     </div>
 
@@ -271,18 +239,12 @@ const RecentTickets = () => {
 
                   {/* Priority / Status / Date */}
                   <div className="mt-3 flex flex-wrap items-center gap-2">
-                    <PriorityBadge
-                      priority={ticket.priority}
-                    />
+                    <PriorityBadge priority={ticket.priority} />
 
-                    <StatusBadge
-                      status={ticket.status}
-                    />
+                    <StatusBadge status={ticket.status} />
 
                     <span className="text-xs text-gray-400">
-                      {formatDate(
-                        ticket.createdAt,
-                      )}
+                      {formatDate(ticket.createdAt)}
                     </span>
                   </div>
                 </div>

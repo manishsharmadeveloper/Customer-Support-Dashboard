@@ -10,17 +10,11 @@ import {
 import useTicketStore from "../../store/ticketStore";
 
 const StatsCards = () => {
-  const tickets = useTicketStore(
-    (state) => state.tickets,
-  );
+  const tickets = useTicketStore((state) => state.tickets);
 
-  const loading = useTicketStore(
-    (state) => state.loading,
-  );
+  const loading = useTicketStore((state) => state.loading);
 
-  const error = useTicketStore(
-    (state) => state.error,
-  );
+  const error = useTicketStore((state) => state.error);
 
   // =========================================================
   // Loading State
@@ -66,9 +60,7 @@ const StatsCards = () => {
               Unable to load ticket statistics
             </h3>
 
-            <p className="mt-1 text-sm leading-5 text-red-600">
-              {error}
-            </p>
+            <p className="mt-1 text-sm leading-5 text-red-600">{error}</p>
           </div>
         </div>
       </div>
@@ -90,8 +82,7 @@ const StatsCards = () => {
         </h3>
 
         <p className="mt-1 text-sm leading-5 text-gray-500">
-          Ticket statistics will appear here once
-          tickets are available.
+          Ticket statistics will appear here once tickets are available.
         </p>
       </div>
     );
@@ -178,9 +169,7 @@ const StatsCards = () => {
               <div
                 className={`flex h-12 w-12 shrink-0 items-center justify-center rounded-xl ${stat.iconBg} transition-transform duration-300 group-hover:scale-110`}
               >
-                <Icon
-                  className={`h-6 w-6 ${stat.iconColor}`}
-                />
+                <Icon className={`h-6 w-6 ${stat.iconColor}`} />
               </div>
             </div>
 
@@ -188,13 +177,10 @@ const StatsCards = () => {
             <div className="mt-5 flex flex-wrap items-center gap-2">
               <span className="inline-flex items-center gap-1 rounded-full bg-gray-50 px-2 py-1 text-xs font-medium text-gray-500">
                 <ArrowUpRight className="h-3 w-3" />
-
                 Current
               </span>
 
-              <span className="text-xs text-gray-400">
-                from ticket data
-              </span>
+              <span className="text-xs text-gray-400">from ticket data</span>
             </div>
 
             {/* Hover Accent */}

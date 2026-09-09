@@ -60,9 +60,7 @@ const TicketTable = ({
   onOpenTicket = () => {},
 }) => {
   // Always work with an array
-  const ticketList = Array.isArray(tickets)
-    ? tickets
-    : [];
+  const ticketList = Array.isArray(tickets) ? tickets : [];
 
   // =======================================================
   // Empty State
@@ -143,33 +141,22 @@ const TicketTable = ({
 
           <tbody className="divide-y divide-gray-100">
             {ticketList.map((ticket) => {
-              const ticketId =
-                ticket?.id ?? "";
+              const ticketId = ticket?.id ?? "";
 
-              const customerName =
-                ticket?.customer?.name ||
-                "Unknown Customer";
+              const customerName = ticket?.customer?.name || "Unknown Customer";
 
-              const customerEmail =
-                ticket?.customer?.email ||
-                "No email";
+              const customerEmail = ticket?.customer?.email || "No email";
 
-              const subject =
-                ticket?.subject ||
-                "No subject";
+              const subject = ticket?.subject || "No subject";
 
-              const status =
-                ticket?.status || "Open";
+              const status = ticket?.status || "Open";
 
-              const priority =
-                ticket?.priority || "Low";
+              const priority = ticket?.priority || "Low";
 
               return (
                 <tr
                   key={ticketId}
-                  onClick={() =>
-                    onOpenTicket(ticketId)
-                  }
+                  onClick={() => onOpenTicket(ticketId)}
                   className="cursor-pointer transition-colors hover:bg-gray-50"
                 >
                   {/* =================================================
@@ -194,9 +181,7 @@ const TicketTable = ({
                     <div className="flex items-center gap-3">
                       {/* Avatar */}
                       <div className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">
-                        {getInitials(
-                          customerName,
-                        )}
+                        {getInitials(customerName)}
                       </div>
 
                       {/* Customer Details */}
@@ -208,9 +193,7 @@ const TicketTable = ({
                         <div className="mt-0.5 flex min-w-0 items-center gap-1 text-xs text-gray-400">
                           <Mail className="h-3 w-3 shrink-0" />
 
-                          <span className="truncate">
-                            {customerEmail}
-                          </span>
+                          <span className="truncate">{customerEmail}</span>
                         </div>
                       </div>
                     </div>
@@ -220,9 +203,7 @@ const TicketTable = ({
                       PRIORITY
                   ================================================== */}
                   <td className="px-6 py-4">
-                    <PriorityBadge
-                      priority={priority}
-                    />
+                    <PriorityBadge priority={priority} />
                   </td>
 
                   {/* =================================================
@@ -239,25 +220,16 @@ const TicketTable = ({
                       onChange={(event) => {
                         event.stopPropagation();
 
-                        onStatusChange(
-                          ticketId,
-                          event.target.value,
-                        );
+                        onStatusChange(ticketId, event.target.value);
                       }}
                       aria-label={`Change status for ticket ${ticketId}`}
                       className="cursor-pointer rounded-lg border border-gray-200 bg-white px-2.5 py-1.5 text-xs font-medium text-gray-700 outline-none transition hover:border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                     >
-                      <option value="Open">
-                        Open
-                      </option>
+                      <option value="Open">Open</option>
 
-                      <option value="In Progress">
-                        In Progress
-                      </option>
+                      <option value="In Progress">In Progress</option>
 
-                      <option value="Resolved">
-                        Resolved
-                      </option>
+                      <option value="Resolved">Resolved</option>
                     </select>
                   </td>
 
@@ -265,9 +237,7 @@ const TicketTable = ({
                       CREATED DATE
                   ================================================== */}
                   <td className="whitespace-nowrap px-6 py-4 text-sm text-gray-500">
-                    {formatDate(
-                      ticket?.createdAt,
-                    )}
+                    {formatDate(ticket?.createdAt)}
                   </td>
 
                   {/* =================================================
@@ -279,9 +249,7 @@ const TicketTable = ({
                       onClick={(event) => {
                         event.stopPropagation();
 
-                        onOpenTicket(
-                          ticketId,
-                        );
+                        onOpenTicket(ticketId);
                       }}
                       aria-label={`Open ticket ${ticketId}`}
                       className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-gray-400 transition hover:bg-indigo-50 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100"
@@ -301,29 +269,20 @@ const TicketTable = ({
       ====================================================== */}
       <div className="divide-y divide-gray-100 md:hidden">
         {ticketList.map((ticket) => {
-          const ticketId =
-            ticket?.id ?? "";
+          const ticketId = ticket?.id ?? "";
 
-          const customerName =
-            ticket?.customer?.name ||
-            "Unknown Customer";
+          const customerName = ticket?.customer?.name || "Unknown Customer";
 
-          const subject =
-            ticket?.subject ||
-            "No subject";
+          const subject = ticket?.subject || "No subject";
 
-          const status =
-            ticket?.status || "Open";
+          const status = ticket?.status || "Open";
 
-          const priority =
-            ticket?.priority || "Low";
+          const priority = ticket?.priority || "Low";
 
           return (
             <div
               key={ticketId}
-              onClick={() =>
-                onOpenTicket(ticketId)
-              }
+              onClick={() => onOpenTicket(ticketId)}
               className="cursor-pointer p-5 transition-colors hover:bg-gray-50"
             >
               {/* =================================================
@@ -348,9 +307,7 @@ const TicketTable = ({
               ================================================== */}
               <div className="mt-4 flex items-center gap-2">
                 <div className="flex h-8 w-8 shrink-0 items-center justify-center rounded-full bg-indigo-50 text-xs font-bold text-indigo-600">
-                  {getInitials(
-                    customerName,
-                  )}
+                  {getInitials(customerName)}
                 </div>
 
                 <p className="truncate text-sm font-medium text-gray-700">
@@ -362,18 +319,12 @@ const TicketTable = ({
                   PRIORITY / STATUS / DATE
               ================================================== */}
               <div className="mt-4 flex flex-wrap items-center gap-2">
-                <PriorityBadge
-                  priority={priority}
-                />
+                <PriorityBadge priority={priority} />
 
-                <StatusBadge
-                  status={status}
-                />
+                <StatusBadge status={status} />
 
                 <span className="text-xs text-gray-400">
-                  {formatDate(
-                    ticket?.createdAt,
-                  )}
+                  {formatDate(ticket?.createdAt)}
                 </span>
               </div>
 
@@ -391,25 +342,16 @@ const TicketTable = ({
                   onChange={(event) => {
                     event.stopPropagation();
 
-                    onStatusChange(
-                      ticketId,
-                      event.target.value,
-                    );
+                    onStatusChange(ticketId, event.target.value);
                   }}
                   aria-label={`Change status for ticket ${ticketId}`}
                   className="w-full cursor-pointer rounded-lg border border-gray-200 bg-white px-3 py-2 text-xs font-medium text-gray-700 outline-none transition hover:border-gray-300 focus:border-indigo-500 focus:ring-2 focus:ring-indigo-100"
                 >
-                  <option value="Open">
-                    Open
-                  </option>
+                  <option value="Open">Open</option>
 
-                  <option value="In Progress">
-                    In Progress
-                  </option>
+                  <option value="In Progress">In Progress</option>
 
-                  <option value="Resolved">
-                    Resolved
-                  </option>
+                  <option value="Resolved">Resolved</option>
                 </select>
               </div>
             </div>
