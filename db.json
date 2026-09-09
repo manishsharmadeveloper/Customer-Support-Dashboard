@@ -4,7 +4,8 @@
       "id": "TKT-005",
       "customer": {
         "name": "Rohit Mehta",
-        "email": "rohit@example.com"
+        "email": "rohit@example.com",
+        "phone": 9832892398
       },
       "subject": "Order has not been delivered",
       "priority": "High",
@@ -29,7 +30,8 @@
       "id": "TKT-006",
       "customer": {
         "name": "Anjali Gupta",
-        "email": "anjali@example.com"
+        "email": "anjali@example.com",
+        "phone": 9832892398
       },
       "subject": "Unable to download invoice",
       "priority": "Medium",
@@ -48,7 +50,8 @@
       "id": "TKT-007",
       "customer": {
         "name": "Vikas Patel",
-        "email": "vikas@example.com"
+        "email": "vikas@example.com",
+        "phone": 9832892398
       },
       "subject": "Wrong item received",
       "priority": "High",
@@ -73,7 +76,8 @@
       "id": "TKT-008",
       "customer": {
         "name": "Sneha Kapoor",
-        "email": "sneha@example.com"
+        "email": "sneha@example.com",
+        "phone": 9832892398
       },
       "subject": "Account password reset issue",
       "priority": "Medium",
@@ -98,7 +102,8 @@
       "id": "TKT-009",
       "customer": {
         "name": "Karan Malhotra",
-        "email": "karan@example.com"
+        "email": "karan@example.com",
+        "phone": 9832892398
       },
       "subject": "Subscription cancellation request",
       "priority": "Low",
@@ -117,7 +122,8 @@
       "id": "TKT-010",
       "customer": {
         "name": "Arjun Singh",
-        "email": "arjun@example.com"
+        "email": "arjun@example.com",
+        "phone": 9832892398
       },
       "subject": "Unable to change email address",
       "priority": "Medium",
@@ -136,7 +142,8 @@
       "id": "TKT-011",
       "customer": {
         "name": "Pooja Sharma",
-        "email": "pooja@example.com"
+        "email": "pooja@example.com",
+        "phone": 9832892398
       },
       "subject": "Duplicate payment charged",
       "priority": "High",
@@ -161,7 +168,8 @@
       "id": "TKT-012",
       "customer": {
         "name": "Nikhil Joshi",
-        "email": "nikhil@example.com"
+        "email": "nikhil@example.com",
+        "phone": 9832892398
       },
       "subject": "Notification emails not received",
       "priority": "Low",
@@ -186,7 +194,8 @@
       "id": "TKT-013",
       "customer": {
         "name": "Meera Iyer",
-        "email": "meera@example.com"
+        "email": "meera@example.com",
+        "phone": 9832892398
       },
       "subject": "Unable to apply discount coupon",
       "priority": "Medium",
@@ -205,7 +214,8 @@
       "id": "TKT-014",
       "customer": {
         "name": "Suresh Reddy",
-        "email": "suresh@example.com"
+        "email": "suresh@example.com",
+        "phone": 9832892398
       },
       "subject": "Account verification problem",
       "priority": "High",
