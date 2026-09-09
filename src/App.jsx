@@ -4,7 +4,6 @@ import { BrowserRouter, Navigate, Route, Routes } from "react-router-dom";
 import Dashboard from "./pages/Dashboard";
 import TicketList from "./pages/tickets/TicketList";
 import TicketDetails from "./pages/tickets/TicketDetails";
-
 import useTicketStore from "./store/ticketStore";
 
 const App = () => {
