@@ -1,0 +1,231 @@
+{
+  "tickets": [
+    {
+      "id": "TKT-005",
+      "customer": {
+        "name": "Rohit Mehta",
+        "email": "rohit@example.com"
+      },
+      "subject": "Order has not been delivered",
+      "priority": "High",
+      "status": "Resolved",
+      "createdAt": "2026-09-04T12:20:00Z",
+      "messages": [
+        {
+          "id": "M005",
+          "sender": "customer",
+          "message": "My order was supposed to arrive yesterday but I have not received it yet.",
+          "createdAt": "2026-09-04T12:20:00Z"
+        },
+        {
+          "id": "M006",
+          "sender": "support",
+          "message": "We are checking the delivery status with our shipping partner.",
+          "createdAt": "2026-09-04T13:10:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-006",
+      "customer": {
+        "name": "Anjali Gupta",
+        "email": "anjali@example.com"
+      },
+      "subject": "Unable to download invoice",
+      "priority": "Medium",
+      "status": "Open",
+      "createdAt": "2026-09-03T07:45:00Z",
+      "messages": [
+        {
+          "id": "M007",
+          "sender": "customer",
+          "message": "I cannot download the invoice for my recent order.",
+          "createdAt": "2026-09-03T07:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-007",
+      "customer": {
+        "name": "Vikas Patel",
+        "email": "vikas@example.com"
+      },
+      "subject": "Wrong item received",
+      "priority": "High",
+      "status": "Open",
+      "createdAt": "2026-09-02T15:30:00Z",
+      "messages": [
+        {
+          "id": "M008",
+          "sender": "customer",
+          "message": "I received a different item from what I ordered.",
+          "createdAt": "2026-09-02T15:30:00Z"
+        },
+        {
+          "id": "M009",
+          "sender": "support",
+          "message": "Please provide the order details so we can investigate.",
+          "createdAt": "2026-09-02T16:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-008",
+      "customer": {
+        "name": "Sneha Kapoor",
+        "email": "sneha@example.com"
+      },
+      "subject": "Account password reset issue",
+      "priority": "Medium",
+      "status": "Resolved",
+      "createdAt": "2026-09-01T10:15:00Z",
+      "messages": [
+        {
+          "id": "M010",
+          "sender": "customer",
+          "message": "The password reset email is not arriving in my inbox.",
+          "createdAt": "2026-09-01T10:15:00Z"
+        },
+        {
+          "id": "M011",
+          "sender": "support",
+          "message": "The password reset issue has been resolved.",
+          "createdAt": "2026-09-01T11:30:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-009",
+      "customer": {
+        "name": "Karan Malhotra",
+        "email": "karan@example.com"
+      },
+      "subject": "Subscription cancellation request",
+      "priority": "Low",
+      "status": "In Progress",
+      "createdAt": "2026-08-31T09:00:00Z",
+      "messages": [
+        {
+          "id": "M012",
+          "sender": "customer",
+          "message": "I would like to cancel my current subscription.",
+          "createdAt": "2026-08-31T09:00:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-010",
+      "customer": {
+        "name": "Arjun Singh",
+        "email": "arjun@example.com"
+      },
+      "subject": "Unable to change email address",
+      "priority": "Medium",
+      "status": "Open",
+      "createdAt": "2026-08-30T11:25:00Z",
+      "messages": [
+        {
+          "id": "M013",
+          "sender": "customer",
+          "message": "I am unable to change the email address associated with my account.",
+          "createdAt": "2026-08-30T11:25:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-011",
+      "customer": {
+        "name": "Pooja Sharma",
+        "email": "pooja@example.com"
+      },
+      "subject": "Duplicate payment charged",
+      "priority": "High",
+      "status": "In Progress",
+      "createdAt": "2026-08-29T16:40:00Z",
+      "messages": [
+        {
+          "id": "M014",
+          "sender": "customer",
+          "message": "I was charged twice for the same order.",
+          "createdAt": "2026-08-29T16:40:00Z"
+        },
+        {
+          "id": "M015",
+          "sender": "support",
+          "message": "We are reviewing the payment transactions and will investigate the duplicate charge.",
+          "createdAt": "2026-08-29T17:15:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-012",
+      "customer": {
+        "name": "Nikhil Joshi",
+        "email": "nikhil@example.com"
+      },
+      "subject": "Notification emails not received",
+      "priority": "Low",
+      "status": "Resolved",
+      "createdAt": "2026-08-28T08:20:00Z",
+      "messages": [
+        {
+          "id": "M016",
+          "sender": "customer",
+          "message": "I am not receiving notification emails for my account activity.",
+          "createdAt": "2026-08-28T08:20:00Z"
+        },
+        {
+          "id": "M017",
+          "sender": "support",
+          "message": "The notification email issue has been fixed.",
+          "createdAt": "2026-08-28T09:45:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-013",
+      "customer": {
+        "name": "Meera Iyer",
+        "email": "meera@example.com"
+      },
+      "subject": "Unable to apply discount coupon",
+      "priority": "Medium",
+      "status": "Open",
+      "createdAt": "2026-08-27T13:10:00Z",
+      "messages": [
+        {
+          "id": "M018",
+          "sender": "customer",
+          "message": "The discount coupon is valid but it is not being applied during checkout.",
+          "createdAt": "2026-08-27T13:10:00Z"
+        }
+      ]
+    },
+    {
+      "id": "TKT-014",
+      "customer": {
+        "name": "Suresh Reddy",
+        "email": "suresh@example.com"
+      },
+      "subject": "Account verification problem",
+      "priority": "High",
+      "status": "In Progress",
+      "createdAt": "2026-08-26T10:05:00Z",
+      "messages": [
+        {
+          "id": "M019",
+          "sender": "customer",
+          "message": "I am unable to complete the account verification process.",
+          "createdAt": "2026-08-26T10:05:00Z"
+        },
+        {
+          "id": "M020",
+          "sender": "support",
+          "message": "We are investigating the verification issue.",
+          "createdAt": "2026-08-26T10:40:00Z"
+        }
+      ]
+    }
+  ],
+  "$schema": "./node_modules/json-server/schema.json"
+}
