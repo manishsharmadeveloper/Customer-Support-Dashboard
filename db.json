@@ -8,7 +8,7 @@
       },
       "subject": "Order has not been delivered",
       "priority": "High",
-      "status": "Resolved",
+      "status": "Open",
       "createdAt": "2026-09-04T12:20:00Z",
       "messages": [
         {
