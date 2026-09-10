@@ -151,7 +151,7 @@ const StatsCards = () => {
         return (
           <div
             key={stat.title}
-            className="group relative cursor-default overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg"
+            className="group relative overflow-hidden rounded-2xl border border-gray-200 bg-white p-5 shadow-sm transition-all duration-300 hover:-translate-y-1 hover:border-gray-300 hover:shadow-lg cursor-pointer"
           >
             {/* Top Section */}
             <div className="flex items-start justify-between">

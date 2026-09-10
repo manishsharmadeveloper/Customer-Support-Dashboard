@@ -254,7 +254,7 @@ const TicketTable = ({
                       aria-label={`Open ticket ${ticketId}`}
                       className="inline-flex h-8 w-8 items-center justify-center rounded-lg text-gray-400 transition hover:bg-indigo-50 hover:text-indigo-600 focus:outline-none focus:ring-2 focus:ring-indigo-100"
                     >
-                      <ChevronRight className="h-4 w-4" />
+                      <ChevronRight className="h-4 w-4 cursor-pointer" />
                     </button>
                   </td>
                 </tr>
